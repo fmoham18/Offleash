@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function SecondPage() {
@@ -8,15 +9,21 @@ export default function SecondPage() {
             </h1>
             <br />
             <div className='flex justify-center md:gap-10'>
-                <button className='bg-main-color rounded-full w-16 h-16'>
+                <Link 
+                    href='https://linktr.ee/offleash.mp3'
+                    className='bg-main-color rounded-full w-16 h-16 flex items-center justify-center'>
                     LinkTree
-                </button>
-                <button className='bg-main-color rounded-full w-16 h-16'>
+                </Link>
+                <Link
+                    href='https://open.spotify.com/artist/0dFHANOUI4ZVoxOgVvgPjP?si=8IrmyJWjRL65UI5lxgDYWg'
+                    className='bg-main-color rounded-full w-16 h-16 flex items-center justify-center'>
                     Spotify
-                </button>
-                <button className='bg-main-color rounded-full w-16 h-16'>
+                </Link>
+                <Link 
+                    href='https://www.instagram.com/offleash.mp3/'
+                    className='bg-main-color rounded-full w-16 h-16 flex items-center justify-center'>
                     Insta
-                </button>
+                </Link>
             </div>
             <br />
             <h3 className='md:text-xl text-center'>
