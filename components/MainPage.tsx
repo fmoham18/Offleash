@@ -50,12 +50,14 @@ export default function MainPage() {
     }, [defaultFont])
 
     return (
-        <Image
-            src={defaultFont ? SecondLogo : SecondLogo_Sad}
-            alt='Our cool second logo that cannot load :('
-            width={widthSize}
-            onClick={() => { setFont(!defaultFont) }}
-            className='flex justify-self-center cursor-pointer mb-16'
-        />
+        <div className='flex justify-center'>
+            <Image
+                src={defaultFont ? SecondLogo : SecondLogo_Sad}
+                alt='Our cool second logo that cannot load :('
+                width={widthSize}
+                onClick={() => { setFont(!defaultFont) }}
+                className='cursor-pointer mb-16'
+            />
+        </div>
     )
 }
