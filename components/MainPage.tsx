@@ -55,7 +55,7 @@ export default function MainPage() {
             alt='Our cool second logo that cannot load :('
             width={widthSize}
             onClick={() => { setFont(!defaultFont) }}
-            className='flex justify-self-center mb-32 md:md-24 cursor-pointer'
+            className='flex justify-self-center cursor-pointer'
         />
     )
 }
