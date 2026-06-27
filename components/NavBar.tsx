@@ -2,6 +2,7 @@
 import Logo from '../public/NEW OL Logo (transparent).png' 
 import OL_Borgor from '../public/offleash_borgor.png'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const mobileScreen = 56
@@ -60,7 +61,7 @@ export default function NavBar() {
                         <button className='hidden'>
                             Merch
                         </button>
-                        <button>
+                        <button className='cursor-pointer' onClick={ () => {document.getElementById('shows')?.scrollIntoView()} }>
                             Shows/Music
                         </button>
                     </div>
@@ -70,7 +71,7 @@ export default function NavBar() {
                         width={widthSize}
                         className='justify-self-center'
                     />
-                    <button className='hidden md:block md:justify-self-start md:text-black'>
+                    <button className='hidden md:block md:justify-self-start md:text-black cursor-pointer' onClick={ () => {document.getElementById('shows')?.scrollIntoView()} }>
                     Contact Us
                     </button>
                 </>)

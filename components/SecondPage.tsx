@@ -43,12 +43,11 @@ export default function SecondPage() {
     }, [currentScreenSize])
 
     return (
-        <div className='flex flex-col items-center justify-center min-h-screen'>
-            <h1 className= 'font-sans text-2xl md:text-6xl 2xl:text-9xl font-bold text-center'>
+        <div id='shows' className='flex flex-col items-center  min-h-screen'>
+            <h1 className= 'pt-16 mb-6 text-2xl md:text-6xl 2xl:text-9xl font-bold text-center'>
                 Upcoming Shows/Music
             </h1>
-            <br />
-            <div className='flex justify-center gap-5 md:gap-10 2xl:gap-20'>
+            <div className='flex justify-center gap-5 mb-6 md:gap-10 2xl:gap-20'>
                 <Link 
                     href='https://linktr.ee/offleash.mp3'
                     target='_blank'
@@ -80,23 +79,16 @@ export default function SecondPage() {
                     />
                 </Link>
             </div>
-            <br />
-            <iframe data-testid="embed-iframe" className="w-72 h-24 xl:w-1/4 2xl:w-2/8 md:h-28 2xl:h-40" src="https://open.spotify.com/embed/track/40iucKIMPzr961M9Hd3wVp?utm_source=generator" 
+            <iframe data-testid="embed-iframe" className="w-72 h-24 xl:w-1/4 2xl:w-2/8 md:h-28 2xl:h-40 mb-6" src="https://open.spotify.com/embed/track/40iucKIMPzr961M9Hd3wVp?utm_source=generator" 
                     allow="autoplay; clipboard-write; encrypted-media; 
                     fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <h3 className='text-lg md:text-xl 2xl:text-4xl text-center'>
-                No Upcoming Shows :( <br />
-                <br />
-                BUTT, we are gathering up all our ingredients to cook up some new music for yall <br />
-                <br />
-                Visit our Socials for quicker updates!
-            </h3>
-            <br />
-            <h3 className='text-lg md:text-xl 2xl:text-4xl text-center'>
-                Need to contact us? 
-                <br /><br />
-                Send us a DM on Instagram or email us at offleashbandmedia (at) gmail (dot) com!
-            </h3>
+            <div className='text-lg md:text-xl 2xl:text-4xl text-center'>
+                <p className='mb-6'>No Upcoming Shows :( </p>
+                <p className='mb-6'>BUTT, we are gathering up all our ingredients to cook up some new music for yall</p>
+                <p className='mb-6'>Visit our Socials for quicker updates!</p>
+                <p className='mb-6'>Need to contact us? </p>
+                <p className='mb-6'>Send us a DM on Instagram or email us at offleashbandmedia (at) gmail (dot) com!</p>
+            </div>
         </div>
     )
 
