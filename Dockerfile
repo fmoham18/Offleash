@@ -27,6 +27,20 @@
     fi
 
   # ============================================
+  # Stage 1.5: Dev environment
+  # ============================================
+
+  FROM dependencies AS development
+  # Runs while building image
+  RUN npm install
+  # Copies the local files to the docker image
+  COPY . .
+  # Believe I'll have to expose this now since there's nothing that does this in previous stages or in the current stage otherwise. I don't think this will affect the EXPOSE in the prod stage.
+  EXPOSE 3000
+  # Executes the following when the container is running
+  CMD ["npm", "run", "dev"]
+
+  # ============================================
   # Stage 2: Build Next.js application in standalone mode
   # ============================================
 
