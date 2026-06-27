@@ -27,10 +27,10 @@
     fi
 
   # ============================================
-  # Stage 1.5: Dev environment
+  # Stage 1.5: Dev environment (NOTE: I'm not sure if this is being used by Render rn, and also might not matter)
   # ============================================
 
-  FROM dependencies AS development
+  FROM dependencies AS dev
   # Runs while building image
   RUN npm install
   # Copies the local files to the docker image
