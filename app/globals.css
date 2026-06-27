@@ -8,9 +8,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --color-main-color: #dde6a6;
+  --breakpoint-2xl: 100rem;
+  --font-edbert: var(--font-edbert)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,13 +22,13 @@
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: Edbert;
-  src: url('../Edbert-Regular.otf');
-}
+  src: url('../app/fonts/Edbert-Regular.otf');
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Edbert, Arial;
+  /* font-family: Edbert, sans-serif; */
 }

@@ -1,9 +1,10 @@
 'use client'
 import SecondLogo from '../public/offleash_logo-revised.png' 
+import SecondLogo_Sad from '../public/offleash_logo_sad.png'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-const mobileScreen = 400
+const mobileScreen = 320
 const normalScreen = 500
 const largeScreen = 800
 const initialScreenSize = 0
@@ -11,6 +12,7 @@ const initialScreenSize = 0
 export default function MainPage() {
     const [currentScreenSize, setCurrentScreenSize] = useState(initialScreenSize)
     const [widthSize, setWidthSize] = useState(normalScreen)
+    const [defaultFont, setFont] = useState(true)
 
     useEffect(() =>{
 
@@ -38,14 +40,22 @@ export default function MainPage() {
         }
     }, [currentScreenSize])
 
+    //use this as a way to change the body font for whole page oowoo
+    useEffect(() => {
+        if (defaultFont) {
+            document.body.className = 'font-edbert'
+        } else {
+            document.body.className = 'font-sans'
+        }
+    }, [defaultFont])
 
     return (
-        <div className='flex justify-center mb-32 md:mb-24'>
-            <Image
-                src={SecondLogo}
-                alt='Our cool second logo that cannot load :('
-                width={widthSize}
-            />
-        </div>
+        <Image
+            src={defaultFont ? SecondLogo : SecondLogo_Sad}
+            alt='Our cool second logo that cannot load :('
+            width={widthSize}
+            onClick={() => { setFont(!defaultFont) }}
+            className='flex justify-self-center mb-32 md:md-24 cursor-pointer'
+        />
     )
 }
