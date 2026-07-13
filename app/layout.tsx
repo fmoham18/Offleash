@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${edbert.variable}`}>
+    <html lang="en" className={`scroll-smooth font-serif ${edbert.variable}`}>
       <body className="min-h-full">{children}</body>
     </html>
   );

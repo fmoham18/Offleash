@@ -18,7 +18,6 @@ export default function NavBar() {
 
     useEffect(() =>{
 
-        console.log(isClicked)
         setCurrentScreenSize(window.innerWidth)
         setIsClicked(false)
 
@@ -42,9 +41,6 @@ export default function NavBar() {
         } else {
             setWidthSize(normalScreen)
         }
-
-        // console.log('widthsize ' + widthSize)
-        // console.log('window size ' + currentScreenSize)
         
         return () => {
             window.removeEventListener('resize', onResize)
@@ -53,10 +49,9 @@ export default function NavBar() {
 
 
     return (
-       //TODO: Change parent to adapt for mobile. keep parent css empty. 
-        <div className='grid grid-cols-3 2xl:text-4xl items-center h-14 md:h-16 2xl:h-30 bg-main-color'>
+        <div className='relative'>
             { !isMobile ? // ******* Non Mobile Mode
-                (<> 
+                (<div className='grid grid-cols-3 2xl:text-4xl items-center h-14 md:h-16 2xl:h-30 bg-main-color'>
                     <div className='hidden md:flex md:justify-self-end md:gap-20 text-black'>
                         <button className='hidden'>
                             Merch
@@ -74,31 +69,38 @@ export default function NavBar() {
                     <button className='hidden md:block md:justify-self-start md:text-black cursor-pointer' onClick={ () => {document.getElementById('shows')?.scrollIntoView()} }>
                     Contact Us
                     </button>
-                </>)
+                </div>)
                 : // **************** Mobile Mode
-                (<>
-                    <button className='justify-self-left' onClick={() => {setIsClicked(!isClicked)}}>
-                        <Image
-                            src={OL_Borgor}
-                            alt='Borgor Logo'
+                (<div className='h-14 bg-main-color'>
+                    <div className='flex'>
+                        <button className='absolute' onClick={() => {setIsClicked(!isClicked)}}>
+                            <Image
+                                src={OL_Borgor}
+                                alt='Borgor Logo'
+                                width={widthSize}
+                            />
+                        </button>
+                        <Image 
+                            src={Logo}
+                            alt="Our cool logo that cannot load :("
                             width={widthSize}
+                            className='m-auto'
                         />
-                    </button>
-                    <Image 
-                        src={Logo}
-                        alt="Our cool logo that cannot load :("
-                        width={widthSize}
-                        className='justify-self-center'
-                    />
-                    <div className={isClicked ? 'bg-amber-600-color text-black w-full h-full' : 'hidden'}>
-                        <button className=''>
-                            Shows/Music
-                        </button>
-                        <button className=''>
-                            Contact Us
-                        </button>
                     </div>
-                </>)
+                    {isClicked && (
+                        <div className='absolute grid grid-rows-2 text-2xl z-50 bg-main-color w-full'>
+                            <button className='text-center h-16' onClick={()=>{
+                                    document.getElementById('shows')?.scrollIntoView()
+                                    setIsClicked(!isClicked)}}>
+                                Shows/Music
+                            </button>
+                            <button className='text-center h-16' onClick={()=>{
+                                    document.getElementById('shows')?.scrollIntoView()  
+                                    setIsClicked(!isClicked)}}>
+                                Contact Us
+                            </button>
+                        </div>)}
+                </div>)
             }
         </div>
     )

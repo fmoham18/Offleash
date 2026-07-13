@@ -12,7 +12,7 @@ const initialScreenSize = 0
 export default function MainPage() {
     const [currentScreenSize, setCurrentScreenSize] = useState(initialScreenSize)
     const [widthSize, setWidthSize] = useState(normalScreen)
-    const [defaultFont, setFont] = useState(true)
+    // const [defaultFont, setFont] = useState(true)
 
     useEffect(() =>{
 
@@ -32,30 +32,30 @@ export default function MainPage() {
             setWidthSize(normalScreen)
         }
 
-        // console.log('widthsize ' + widthSize)
-        // console.log('window size ' + currentScreenSize)
-
         return () => {
             window.removeEventListener('resize', onResize)
         }
     }, [currentScreenSize])
 
+
+    //NOTE: We may use this for something else in the future.
+
     //use this as a way to change the body font for whole page oowoo
-    useEffect(() => {
-        if (defaultFont) {
-            document.body.className = 'font-edbert'
-        } else {
-            document.body.className = 'font-sans'
-        }
-    }, [defaultFont])
+    // useEffect(() => {
+    //     if (defaultFont) {
+    //         document.body.className = 'font-serif'
+    //     } else {
+    //         document.body.className = 'font-sans'
+    //     }
+    // }, [defaultFont])
 
     return (
-        <div className='flex justify-center'>
+        <div className='flex justify-center z-0'>
             <Image
-                src={defaultFont ? SecondLogo : SecondLogo_Sad}
+                src={SecondLogo}
                 alt='Our cool second logo that cannot load :('
                 width={widthSize}
-                onClick={() => { setFont(!defaultFont) }}
+                // onClick={() => { setFont(!defaultFont) }}
                 className='cursor-pointer mb-16'
             />
         </div>
