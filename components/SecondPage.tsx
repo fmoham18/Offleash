@@ -5,12 +5,25 @@ import OL_Insta from '../public/offleash_insta.png'
 import OL_LinkTree from '../public/offleash_linktree.png'
 import Link from 'next/link'
 import Image from 'next/image'
+import Show from './Show'
 import { useEffect, useState } from 'react'
 
 const mobileScreen = 56
 const normalScreen = 64
 const largeScreen = 128
 const initialScreenSize = 0
+
+const shows = [
+    {
+        city: "Washington",
+        state: "DC",
+        venue: "Pearl St Warehouse",
+        time: "7 PM",
+        date: "Sun, Aug 23rd"
+    }
+];
+
+const hasShows = shows.length > 0
 
 export default function SecondPage() {
     const [currentScreenSize, setCurrentScreenSize] = useState(initialScreenSize)
@@ -76,16 +89,43 @@ export default function SecondPage() {
                     />
                 </Link>
             </div>
-            <iframe data-testid="embed-iframe" className="w-72 h-24 xl:w-1/4 2xl:w-2/8 md:h-28 2xl:h-40 mb-6" src="https://open.spotify.com/embed/track/40iucKIMPzr961M9Hd3wVp?utm_source=generator" 
-                    allow="autoplay; clipboard-write; encrypted-media; 
-                    fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <div className='text-lg md:text-xl 2xl:text-4xl text-center'>
-                <p className='mb-6'>No Upcoming Shows :( </p>
-                <p className='mb-6'>BUTT, we are gathering up all our ingredients to cook up some new music for yall</p>
-                <p className='mb-6'>Visit our Socials for quicker updates!</p>
-                <p className='mb-6'>Need to contact us? </p>
-                <p className='mb-6'>Send us a DM on Instagram or email us at offleashbandmedia (at) gmail (dot) com!</p>
-            </div>
+            <br />
+            <h3 className='text-lg md:text-xl 2xl:text-4xl text-center'>
+                <Show
+                    city="Washington"
+                    state="DC"
+                    venue="Pearl Street Warehouse"
+                    time="7 PM"
+                    date="Sun, Aug 23rd"
+                />
+                {/* {
+                    hasShows ? 
+                        {shows.map((show) =>
+                            <Show
+                                city={show.city}
+                                state={show.state}
+                                venue={show.venue}
+                                date={show.date}
+                                time={show.time}
+                            />
+                        )}
+                        :
+                    {
+                    No Upcoming Shows :( <br />
+                    <br />
+                    BUTT, we are gathering up all our ingredients to cook up some new music for yall <br />
+                    <br />
+                    Visit our Socials for quicker updates!
+                    }
+                } */}
+
+            </h3>
+            <br />
+            <h3 className='text-lg md:text-xl 2xl:text-4xl text-center'>
+                Need to contact us? 
+                <br /><br />
+                Send us a DM on Instagram or email us at offleashbandmedia (at) gmail (dot) com!
+            </h3>
         </div>
     )
 
