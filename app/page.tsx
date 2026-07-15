@@ -9,5 +9,5 @@ export default function Main() {
       <MainPage />
       <SecondPage />
     </div>
-  );
+  )
 }
