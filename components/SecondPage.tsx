@@ -34,9 +34,6 @@ export default function SecondPage() {
             setWidthSize(normalScreen)
         }
 
-        // console.log('widthsize ' + widthSize)
-        // console.log('window size ' + currentScreenSize)
-
         return () => {
             window.removeEventListener('resize', onResize)
         }
