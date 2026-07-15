@@ -49,7 +49,7 @@ export default function NavBar() {
 
 
     return (
-        <div className='relative'>
+        <div className='relative font-edbert'>
             { !isMobile ? // ******* Non Mobile Mode
                 (<div className='grid grid-cols-3 2xl:text-4xl items-center h-14 md:h-16 2xl:h-30 bg-main-color'>
                     <div className='hidden md:flex md:justify-self-end md:gap-20 text-black'>
@@ -99,7 +99,7 @@ export default function NavBar() {
                                     setIsClicked(!isClicked)}}>
                                 Contact Us
                             </button>
-                        </div>)}
+                    </div>)}
                 </div>)
             }
         </div>

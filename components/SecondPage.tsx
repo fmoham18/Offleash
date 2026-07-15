@@ -41,7 +41,7 @@ export default function SecondPage() {
 
     return (
         <div id='shows' className='flex flex-col items-center  min-h-screen'>
-            <h1 className= 'pt-16 mb-6 text-2xl md:text-6xl 2xl:text-9xl font-bold text-center'>
+            <h1 className= 'pt-16 mb-6 text-2xl md:text-6xl 2xl:text-9xl font-bold text-center font-edbert'>
                 Upcoming Shows/Music
             </h1>
             <div className='flex justify-center gap-5 mb-6 md:gap-10 2xl:gap-20'>
