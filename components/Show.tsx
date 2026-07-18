@@ -7,12 +7,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-// const users: User[] = [
-//     { id: 1, name: "Edwin Huanami", email: "ed@win.com", role: "Admin" },
-//     { id: 2, name: "Medwin Huanami", email: "med@win.com", role: "Editor" },
-//     { id: 3, name: "Bedwin Huanami", email: "bed@win.com", role: "Viewer" }
-// ];
-
 const mobileScreen = 56
 const normalScreen = 64
 const largeScreen = 128
@@ -48,9 +42,6 @@ export default function Show({city, state, venue, date, time}: Props) {
             setWidthSize(normalScreen)
         }
 
-        // console.log('widthsize ' + widthSize)
-        // console.log('window size ' + currentScreenSize)
-
         return () => {
             window.removeEventListener('resize', onResize)
         }
@@ -59,7 +50,7 @@ export default function Show({city, state, venue, date, time}: Props) {
     return (
         <div className="border-t-4 border-b-4 border-gray-200 text-lg md:text-xl 2xl:text-4xl w-[75vw]">
             <div className="flex p-2 m-4 justify-between">
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-1 justify-between">
                     <div>
                         {city}, {state}
                     </div>
@@ -67,10 +58,13 @@ export default function Show({city, state, venue, date, time}: Props) {
                         {venue} 
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-1">
                     <div>
                         {date}
                     </div>
+		    <div>
+			@
+		    </div>
                     <div>
                         {time}
                     </div>
