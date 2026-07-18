@@ -49,7 +49,7 @@ export default function Show({city, state, venue, date, time}: Props) {
 
     return (
         <div className="border-t-4 border-b-4 border-gray-200 text-lg md:text-xl 2xl:text-4xl w-[75vw]">
-            <div className="flex p-2 m-4 justify-between">
+            <div className="flex p-[1vw] m-[1vw] justify-between">
                 <div className="flex flex-col gap-1 justify-between">
                     <div>
                         {city}, {state}
