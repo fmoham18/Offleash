@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 const mobileScreen = 56
 const normalScreen = 64
-const largeScreen = 128
+const largeScreen = 70
 const initialScreenSize = 0
 
 export default function NavBar() {
