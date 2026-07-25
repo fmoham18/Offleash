@@ -49,18 +49,20 @@ export default function Show({city, state, venue, date, time}: Props) {
     }, [currentScreenSize])
 
     return (
-        <div className="border-t-4 border-b-4 border-gray-200 text-lg md:text-xl 2xl:text-4xl w-[75vw]">
+        <div className="border-t-4 border-main-color text-lg md:text-xl 2xl:text-4xl w-[75vw]">
             {/* Show block */}
-            <div className={`flex flex-col p-[1vw] m-auto justify-between border-4 w-[75vw] md:w-[50vw] md:text-4xl mt-[2vw] mb-[2vw]`}>
+            <div className={`flex flex-col p-[1vw] m-auto justify-between border-3 w-[75vw] md:w-[50vw] lg:w-[40vw] 2xl:w-[30vw] md:text-4xl mt-[2vw] mb-[2vw]`}>
                 <div className="flex flex-col gap-3">
-                    <div className="font-bold">
+                    <div className="font-bold text-xl md:text-4xl">
                         {date} @ {time}
                     </div>
-                    <div>
-                        {venue} 
-                    </div>
-                    <div>
-                        {city}, {state}
+                    <div className="md:text-2xl">
+                        <div>
+                            {venue} 
+                        </div>
+                        <div>
+                            {city}, {state}
+                        </div>
                     </div>
                 </div>
             </div>
