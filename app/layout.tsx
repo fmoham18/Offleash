@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from 'next/font/local'
 import OL_Logo from '../public/OL_Logo_not_transparent.png'
+import { PT_Sans } from 'next/font/google'
+
+const ptSans = PT_Sans({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 const edbert = localFont({
   src: '../app/fonts/Edbert-Regular.otf',
@@ -23,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth font-serif ${edbert.variable}`} >
+    <html lang="en" className={`scroll-smooth ${ptSans.className} ${edbert.variable}`} >
       <body className="min-h-full">{children}</body>
     </html>
   );
