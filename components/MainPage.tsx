@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const mobileScreen = 320
-const normalScreen = 500
+const normalScreen = 600
 const largeScreen = 800
 const initialScreenSize = 0
 
@@ -24,7 +24,7 @@ export default function MainPage() {
         window.addEventListener('resize', onResize)
 
 
-        if (currentScreenSize > 1440) {
+        if (currentScreenSize > 2000) {
             setWidthSize(largeScreen)
         } else if (currentScreenSize < 500 && currentScreenSize != initialScreenSize) {
             setWidthSize(mobileScreen)
@@ -49,6 +49,9 @@ export default function MainPage() {
     //     }
     // }, [defaultFont])
 
+
+    //NOTE: Will need to change margins for different screen heights, as it's affecting the spacing of the image at the center
+
     return (
         <div className='flex justify-center z-0'>
             <Image
@@ -56,7 +59,7 @@ export default function MainPage() {
                 alt='Our cool second logo that cannot load :('
                 width={widthSize}
                 // onClick={() => { setFont(!defaultFont) }}
-                className='cursor-pointer mb-16'
+                className='mb-12'
             />
         </div>
     )
