@@ -16,6 +16,10 @@
   --font-edbert: var(--font-edbert)
 }
 
+@theme {
+  --font-cherry: var(--font-cherry-bomb);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     /* --background: #0a0a0a;

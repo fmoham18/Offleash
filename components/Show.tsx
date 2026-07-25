@@ -6,6 +6,7 @@ import OL_LinkTree from '../public/offleash_linktree.png'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { PT_Sans } from 'next/font/google'
 
 const mobileScreen = 56
 const normalScreen = 64
@@ -49,24 +50,17 @@ export default function Show({city, state, venue, date, time}: Props) {
 
     return (
         <div className="border-t-4 border-b-4 border-gray-200 text-lg md:text-xl 2xl:text-4xl w-[75vw]">
-            <div className="flex p-[1vw] m-[1vw] justify-between">
-                <div className="flex flex-col gap-1 justify-between">
-                    <div>
-                        {city}, {state}
+            {/* Show block */}
+            <div className={`flex flex-col p-[1vw] m-auto justify-between border-4 w-[75vw] md:w-[50vw] md:text-4xl mt-[2vw] mb-[2vw]`}>
+                <div className="flex flex-col gap-3">
+                    <div className="font-bold">
+                        {date} @ {time}
                     </div>
                     <div>
                         {venue} 
                     </div>
-                </div>
-                <div className="flex flex-col gap-1">
                     <div>
-                        {date}
-                    </div>
-		    <div>
-			@
-		    </div>
-                    <div>
-                        {time}
+                        {city}, {state}
                     </div>
                 </div>
             </div>
