@@ -13,13 +13,41 @@ const normalScreen = 64
 const largeScreen = 128
 const initialScreenSize = 0
 
+/*
+ * TO ADD MORE SHOWS
+ * 
+ * Just update the list below following the same format! They will automatically be updated on the website
+ * ShowElement {
+ *   // id is to appease React runtime warning/error
+ *   id: string;
+ *   city: string;
+ *   state: string;
+ *   venue: string;
+ *   date: string;
+ *   time: string;
+ *   url: string;
+ * }
+ * 
+ */
+
 const shows = [
     {
-        city: "Washington",
-        state: "DC",
-        venue: "Pearl St Warehouse",
-        time: "7 PM",
-        date: "Sun, Aug 23rd"
+        id: 0,
+        city:"Washington",
+        state:"DC",
+        venue:"The Artemis",
+        time:"7:30 PM",
+        date:"Fri, Dec 4th",
+        url:"http://partiful.com/e/nJ55acht8iCfnfXlhlae"
+    },
+    {
+        id: 1,
+        city:"Alexandria",
+        state:"VA",
+        venue:"Galactic Panther",
+        time:"7 PM",
+        date:"Fri, Dec 11th",
+        url:"https://www.eventbrite.com/e/live-music-wavebeam-quiet-hours-big-government-offleash-tickets-2004018927559?aff=ebdsoporgprofile"
     }
 ];
 
@@ -92,34 +120,9 @@ export default function SecondPage() {
             <br />
             <iframe data-testid="embed-iframe" className="w-72 h-24 xl:w-1/4 2xl:w-2/8 md:h-28 2xl:h-40 mb-6" src="https://open.spotify.com/embed/track/40iucKIMPzr961M9Hd3wVp?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <h3 className='text-lg md:text-xl 2xl:text-4xl text-center'>
-                <Show
-                    city="Washington"
-                    state="DC"
-                    venue="Pearl Street Warehouse"
-                    time="7 PM"
-                    date="Sun, Aug 23rd"
-                />
-                {/* {
-                    hasShows ? 
-                        {shows.map((show) =>
-                            <Show
-                                city={show.city}
-                                state={show.state}
-                                venue={show.venue}
-                                date={show.date}
-                                time={show.time}
-                            />
-                        )}
-                        :
-                    {
-                    No Upcoming Shows :( <br />
-                    <br />
-                    BUTT, we are gathering up all our ingredients to cook up some new music for yall <br />
-                    <br />
-                    Visit our Socials for quicker updates!
-                    }
-                } */}
-
+                <div className="border-t-4 border-main-color text-lg md:text-xl 2xl:text-4xl w-[75vw]">
+                    <Show shows={shows}/>
+                </div>
             </h3>
             <br />
             <h3 className='text-lg md:text-xl 2xl:text-4xl text-center'>
