@@ -53,14 +53,14 @@ export default function MainPage() {
     //NOTE: Will need to change margins for different screen heights, as it's affecting the spacing of the image at the center
   return (
         <div className='relative flex justify-center'>
-            <video autoPlay muted loop src='/offleashvid_demo.mp4' className='mt-10 mb-24 md:mb-16 xl:w-7/10 xl:h-3/4 border border-width-20 border-main-color'/>
-            {/* <Image
+            {/* <video autoPlay muted loop src='/offleashvid_demo.mp4' className='mt-10 mb-24 md:mb-16 xl:w-7/10 xl:h-3/4 border border-width-20 border-main-color'/> */}
+            <Image
                 src={SecondLogo}
                 alt='Our cool second logo that cannot load :('
                 width={widthSize}
                 // onClick={() => { setFont(!defaultFont) }}
                 className='mb-12 z-40'
-            /> */}
+            />
         </div>
     )
 }
